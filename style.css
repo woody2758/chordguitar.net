@@ -1,0 +1,488 @@
+/* Universal Box-Sizing for consistent layouts */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Color Palette */
+    --primary-color: #007bff; /* A nice blue for links/buttons */
+    --secondary-color: #6c757d; /* Muted gray for secondary text */
+    --accent-color: #28a745; /* Green for success/highlight */
+    --text-color-dark: #343a40; /* Dark text for readability */
+    --text-color-light: #f8f9fa; /* Light text for dark backgrounds */
+    --bg-color-light: #f8f9fa; /* Light background */
+    --bg-color-white: #ffffff; /* Pure white background */
+    --border-color: #dee2e6; /* Light gray border */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Subtle shadow */
+
+    /* Typography */
+    --font-family-base: 'Prompt', sans-serif;
+    --font-size-base: 1rem; /* 16px */
+    --line-height-base: 1.6;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem; /* 8px */
+    --spacing-sm: 1rem;   /* 16px */
+    --spacing-md: 1.5rem; /* 24px */
+    --spacing-lg: 2rem;   /* 32px */
+    --spacing-xl: 3rem;   /* 48px */
+}
+
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--text-color-dark);
+    background-color: var(--bg-color-light);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto; /* Center the container */
+    padding: 0 var(--spacing-sm); /* Padding on sides for smaller screens */
+}
+
+/* --- Header --- */
+.main-header {
+    background-color: var(--bg-color-white);
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--spacing-sm) 0;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.main-header .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+}
+
+.main-header .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.main-header .logo a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.main-header .search-box {
+    display: flex;
+    flex-grow: 1;
+    max-width: 500px;
+}
+
+.main-header .search-box input {
+    flex-grow: 1;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: 4px 0 0 4px;
+    font-size: var(--font-size-base);
+}
+
+.main-header .search-box button {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border: 1px solid var(--primary-color);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-header .search-box button:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.main-header .user-nav a {
+    text-decoration: none;
+    color: var(--text-color-dark);
+    margin-left: var(--spacing-sm);
+    transition: color 0.2s ease;
+}
+
+.main-header .user-nav a:hover {
+    color: var(--primary-color);
+}
+
+/* --- AdSense Placeholders --- */
+.ad-container {
+    text-align: center;
+    padding: var(--spacing-sm) 0;
+    background-color: var(--bg-color-white);
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: var(--spacing-lg);
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.ad-container p {
+    padding: var(--spacing-sm);
+    border: 1px dashed var(--border-color);
+    display: inline-block;
+}
+
+/* Specific ad container margins */
+.ad-top-leaderboard {
+    margin-top: var(--spacing-sm);
+}
+.ad-bottom-leaderboard {
+    margin-top: var(--spacing-xl);
+    border-top: 1px solid var(--border-color);
+    border-bottom: none;
+}
+
+
+/* --- Main Content Layout --- */
+.song-page-content .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+}
+
+.song-article {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--bg-color-white);
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.sidebar {
+    flex: 0 0 300px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.sidebar .ad-container {
+    background-color: var(--bg-color-white);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    border-bottom: none;
+    margin-bottom: 0;
+}
+.sidebar .ad-container p {
+    border: 1px dashed var(--border-color);
+    padding: var(--spacing-md);
+}
+
+
+/* --- Song Article Elements --- */
+.song-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.artist-name {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.song-metadata {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.transpose-controls {
+    background-color: var(--bg-color-light);
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-sm);
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+.transpose-controls label {
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.transpose-controls select,
+.transpose-controls button {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    background-color: var(--bg-color-white);
+}
+
+.transpose-controls button {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border-color: var(--primary-color);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.transpose-controls button:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.chord-lyrics-area {
+    margin-bottom: var(--spacing-lg);
+    background-color: var(--bg-color-white);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.chord-text {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+    line-height: 2;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: var(--text-color-dark);
+}
+
+.chord-text .chord {
+    font-weight: 700;
+    color: var(--primary-color);
+    white-space: pre;
+}
+
+.youtube-embed-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: var(--spacing-lg);
+    background-color: #000;
+    border-radius: 8px;
+}
+
+.youtube-embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.related-songs {
+    background-color: var(--bg-color-white);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.related-songs h3 {
+    font-size: 1.25rem;
+    color: var(--text-color-dark);
+    margin-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: var(--spacing-xs);
+}
+
+.related-songs ul {
+    list-style: none;
+}
+
+.related-songs ul li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.related-songs ul li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.2s ease;
+}
+
+.related-songs ul li a:hover {
+    color: var(--secondary-color);
+}
+
+
+/* --- Footer --- */
+.main-footer {
+    background-color: var(--text-color-dark);
+    color: var(--text-color-light);
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.main-footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.main-footer .footer-nav a,
+.main-footer .social-links a {
+    color: var(--text-color-light);
+    text-decoration: none;
+    margin: 0 var(--spacing-xs);
+    transition: color 0.2s ease;
+}
+
+.main-footer .footer-nav a:hover,
+.main-footer .social-links a:hover {
+    color: var(--primary-color);
+}
+
+.main-footer .social-links i {
+    font-size: 1.2rem;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .main-header .search-box {
+        width: 100%;
+        max-width: 100%;
+        order: 3;
+    }
+
+    .main-header .user-nav {
+        width: 100%;
+        text-align: center;
+        margin-top: var(--spacing-sm);
+        order: 2;
+    }
+    .main-header .user-nav a {
+        margin: 0 var(--spacing-xs);
+    }
+    
+    .main-header .logo {
+        order: 1;
+        text-align: center;
+        width: 100%;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .song-page-content .container {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .sidebar {
+        flex: 1 1 auto;
+        order: 2;
+    }
+
+    .song-article {
+        order: 1;
+        padding: var(--spacing-md);
+    }
+
+    .transpose-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .transpose-controls label {
+        width: 100%;
+        text-align: center;
+    }
+    .transpose-controls select,
+    .transpose-controls button {
+        width: 100%;
+    }
+    .transpose-controls button:first-of-type {
+        margin-top: var(--spacing-xs);
+    }
+}
+
+@media (max-width: 480px) {
+    .song-title {
+        font-size: 2rem;
+    }
+    .artist-name {
+        font-size: 1.2rem;
+    }
+    .chord-text {
+        font-size: 1rem;
+    }
+}
+
+
+/* --- NEW: Search Results Styling --- */
+.search-box {
+    position: relative;
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color-white);
+    border: 1px solid var(--border-color);
+    border-top: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none;
+    max-height: 300px;
+    overflow-y: auto;
+    border-radius: 0 0 8px 8px;
+}
+
+.search-results ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.search-results li {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.search-results li:last-child {
+    border-bottom: none;
+}
+
+.search-results li:hover {
+    background-color: var(--bg-color-light);
+}
+
+.search-results li a {
+    text-decoration: none;
+    color: var(--text-color-dark);
+    display: block;
+}
+
+.search-results li a span {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    margin-top: 4px;
+}
+
+.search-results p {
+    padding: var(--spacing-md);
+    color: var(--secondary-color);
+    text-align: center;
+}
