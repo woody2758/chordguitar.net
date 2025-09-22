@@ -3,10 +3,10 @@ header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 
 // --- 1. ปรับแก้ข้อมูลการเชื่อมต่อฐานข้อมูลของคุณ ---
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "woodysay_chord";
+$servername = DB_HOST;
+$username = DB_USER;
+$password = DB_PASS;
+$dbname = DB_NAME;
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

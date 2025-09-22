@@ -1,33 +1,11 @@
-<!DOCTYPE html>
-<html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChordGuitar.net</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
 
-    <header class="main-header">
-        <div class="container">
-            <div class="logo">
-                <a href="/">ChordGuitar.net</a>
-            </div>
-            <div class="search-box">
-                <input type="text" placeholder="ค้นหาเพลง / ศิลปิน / คอร์ด...">
-                <button aria-label="ค้นหา"><i class="fas fa-search"></i></button>
-            </div>
-            <nav class="user-nav">
-                <a href="/login">เข้าสู่ระบบ</a>
-                <a href="/post-chord">โพสต์คอร์ด</a>
-            </nav>
-        </div>
-    </header>
 
+<?php
+include_once "main.config.php";
+include_once "inc/main.function.php";
+include_once "inc/inc.meta.php";
+include_once "inc/inc.header.php";
+?>
     <div class="ad-container ad-top-leaderboard">
         <p>[พื้นที่โฆษณาขนาดใหญ่]</p>
     </div>
@@ -87,26 +65,6 @@
         <p>[พื้นที่โฆษณาขนาดใหญ่ท้ายหน้า]</p>
     </div>
 
-    <footer class="main-footer">
-        <div class="container">
-            <nav class="footer-nav">
-                <a href="/about">เกี่ยวกับเรา</a>
-                <a href="/contact">ติดต่อ</a>
-                <a href="/privacy">นโยบายความเป็นส่วนตัว</a>
-                <a href="/sitemap">แผนผังเว็บไซต์</a>
-            </nav>
-            <div class="copyright">
-                &copy; 2025 ChordGuitar.net. All rights reserved.
-            </div>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </footer>
-    
-    <script src="script.js"></script>
-
-</body>
-</html>
+<?php
+include_once "inc/inc.footer.php";
+?>

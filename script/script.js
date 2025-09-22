@@ -1,5 +1,5 @@
 // --- 1. กำหนดค่า API Endpoint และฟังก์ชัน Transpose ---
-const API_URL = 'api.php?request='; // ADJUST THIS URL
+const API_URL = './api/api.php?request='; // ADJUST THIS URL
 const CHORDS_LIST = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
 const FLAT_TO_SHARP_MAP = { "Db": "C#", "Eb": "D#", "Gb": "F#", "Ab": "G#", "Bb": "A#" };
 const FLAT_PREFERRING_KEYS = ["F", "Bb", "Eb", "Ab", "Db", "Gb"];
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const ul = document.createElement('ul');
             results.forEach(song => {
                 const li = document.createElement('li');
-                li.innerHTML = `<a href="song/${song.song_id}">${song.song_name} <br><span>- ${song.artistis_name}</span></a>`;
+                li.innerHTML = `<a href="./song/${song.song_id}">${song.song_name} <br><span>- ${song.artistis_name}</span></a>`;
                 ul.appendChild(li);
             });
             searchResultsDiv.appendChild(ul);
